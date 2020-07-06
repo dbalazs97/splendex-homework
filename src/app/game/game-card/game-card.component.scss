@@ -1,0 +1,13 @@
+@import 'src/assets/styles/colors';
+
+.game-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+  margin: 16px;
+  border: 1px solid $splendex-border;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgba(144, 144, 144, 0.5);
+}
