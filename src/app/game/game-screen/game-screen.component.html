@@ -6,4 +6,14 @@
     </div>
     <button class="game-screen__statistics__restart">RESTART</button>
   </div>
+
+  <div class="game-screen__cards">
+    <div
+      (click)="revealCard(index)"
+      *ngFor="let card of gameEngineService.fields; let index = index"
+      class="game-screen__cards__card"
+    >
+      {{card.value}} - {{card.revealed}}
+    </div>
+  </div>
 </main>

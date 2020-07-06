@@ -8,4 +8,18 @@
     align-items: center;
     justify-content: space-between;
   }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      border: 1px solid black;
+    }
+  }
 }

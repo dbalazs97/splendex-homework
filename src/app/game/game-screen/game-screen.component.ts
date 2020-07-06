@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameEngineService } from '../../core/game-engine.service';
 
 @Component({
   selector: 'splendex-game-screen',
@@ -7,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameScreenComponent implements OnInit {
 
-  constructor() {
+  constructor(
+    public gameEngineService: GameEngineService,
+  ) {
+    this.gameEngineService.newGame(10);
   }
 
   ngOnInit(): void {
   }
 
+  public revealCard(index: number): void {
+    this.gameEngineService.openField(index);
+  }
 }
