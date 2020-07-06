@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-intro-screen',
+  selector: 'splendex-intro-screen',
   templateUrl: './intro-screen.component.html',
   styleUrls: [ './intro-screen.component.scss' ],
 })
