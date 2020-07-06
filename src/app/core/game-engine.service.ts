@@ -17,7 +17,11 @@ export class GameEngineService {
   }
 
   public get isWon(): boolean {
-    return this.currentGame.tiles.every(field => field.revealed);
+    if (this.currentGame && this.currentGame.tiles) {
+      return this.currentGame.tiles.every(field => field.revealed);
+    } else {
+      return false;
+    }
   }
 
   public get fields(): Array<GameTile> {
@@ -33,7 +37,7 @@ export class GameEngineService {
   }
 
   public newGame(deckSize: number): void {
-    if (this.currentGame?.tries < this.bestValue || this.bestValue === 0) {
+    if ((this.currentGame?.tries < this.bestValue || this.bestValue === 0) && this.isWon) {
       this.bestValue = this.currentGame?.tries ?? 0;
     }
     this.currentGame = this.gameGeneratorService.generateGame(deckSize);
