@@ -8,12 +8,8 @@
   </div>
 
   <div class="game-screen__cards">
-    <div
-      (click)="revealCard(index)"
-      *ngFor="let card of gameEngineService.fields; let index = index"
-      class="game-screen__cards__card"
-    >
-      {{card.value}} - {{card.revealed}}
+    <div class="game-screen__cards--wrapper">
+      <splendex-game-card *ngFor="let card of gameEngineService.fields; let index = index" [card]="card" [index]="index"></splendex-game-card>
     </div>
   </div>
 </main>

@@ -16,8 +16,4 @@ export class GameScreenComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  public revealCard(index: number): void {
-    this.gameEngineService.openField(index);
-  }
 }
