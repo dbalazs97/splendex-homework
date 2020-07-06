@@ -9,6 +9,10 @@
 
   &__logo {
     height: 48px;
+
+    @media (max-width: 600px) {
+      display: none;
+    }
   }
 
   &__selector {
