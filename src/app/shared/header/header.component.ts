@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { GameEngineService } from '../../core/game-engine.service';
 
 @Component({
@@ -11,6 +12,7 @@ export class HeaderComponent {
 
   constructor(
     public gameEngineService: GameEngineService,
+    public router: Router,
   ) {
   }
 

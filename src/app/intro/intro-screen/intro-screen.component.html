@@ -1,1 +1,5 @@
-<p>intro-screen works!</p>
+<main class="intro-screen">
+  <div class="intro-screen__title">Splendex Memory Game</div>
+  <splendex-deck-size-selector [(selectedSize)]="selectedSize"></splendex-deck-size-selector>
+  <splendex-new-game-button (clickEvent)="newGame()"></splendex-new-game-button>
+</main>

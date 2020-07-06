@@ -2,7 +2,7 @@
   <a routerLink="/">
     <img alt="Splendex logo" class="header__logo" src="assets/splendex-logo.svg">
   </a>
-  <div class="header__selector">
+  <div *ngIf="router.url.includes('/game')" class="header__selector">
     <div>Deck size:</div>
     <splendex-deck-size-selector [(selectedSize)]="selectedSize"></splendex-deck-size-selector>
     <splendex-new-game-button (clickEvent)="startNewGame()"></splendex-new-game-button>

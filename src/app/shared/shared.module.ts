@@ -15,6 +15,8 @@ import { NewGameButtonComponent } from './new-game-button/new-game-button.compon
   ],
   exports: [
     HeaderComponent,
+    DeckSizeSelectorComponent,
+    NewGameButtonComponent,
   ],
 })
 export class SharedModule {
