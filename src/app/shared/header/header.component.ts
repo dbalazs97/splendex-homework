@@ -1,16 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { GameEngineService } from '../../core/game-engine.service';
 
 @Component({
   selector: 'splendex-header',
   templateUrl: './header.component.html',
   styleUrls: [ './header.component.scss' ],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+  public selectedSize = 3;
 
-  constructor() {
+  constructor(
+    public gameEngineService: GameEngineService,
+  ) {
   }
 
-  ngOnInit(): void {
+  public startNewGame(): void {
+    this.gameEngineService.newGame(this.selectedSize * 2);
   }
 
 }

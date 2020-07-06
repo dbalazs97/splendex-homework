@@ -4,7 +4,7 @@
   </a>
   <div class="header__selector">
     <div>Deck size:</div>
-    <splendex-deck-size-selector></splendex-deck-size-selector>
-    <splendex-new-game-button></splendex-new-game-button>
+    <splendex-deck-size-selector [(selectedSize)]="selectedSize"></splendex-deck-size-selector>
+    <splendex-new-game-button (clickEvent)="startNewGame()"></splendex-new-game-button>
   </div>
 </nav>

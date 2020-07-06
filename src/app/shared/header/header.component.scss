@@ -17,6 +17,10 @@
     justify-content: center;
     flex-grow: 1;
 
+    & > * {
+      margin: 8px;
+    }
+
     div {
       font-size: 0.9em;
       color: $splendex-text-light;

@@ -1,5 +1,5 @@
 <label>
-  <select class="deck-size-selector">
-    <option *ngFor="let _ of [].constructor(maxSize-minSize+1); let index = index" [ngValue]="index + minSize">{{index + minSize}}</option>
+  <select (ngModelChange)="selectedSizeChange.emit($event)" [ngModel]="selectedSize" class="deck-size-selector">
+    <option *ngFor="let _ of [].constructor(maxSize-minSize+1); let index = index" [ngValue]="index + minSize">{{(index + minSize) * 2}}</option>
   </select>
 </label>
