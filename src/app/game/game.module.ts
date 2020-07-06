@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { IntroScreenComponent } from '../intro/intro-screen/intro-screen.component';
+import { GameScreenComponent } from './game-screen/game-screen.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [ GameScreenComponent ],
   imports: [
     CommonModule,
-    RouterModule.forChild([ { path: '', component: IntroScreenComponent, pathMatch: 'full' } ]),
+    RouterModule.forChild([ { path: '', component: GameScreenComponent, pathMatch: 'full' } ]),
   ],
 })
 export class GameModule {

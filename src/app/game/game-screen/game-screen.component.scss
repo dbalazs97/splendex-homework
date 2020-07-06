@@ -1,0 +1,11 @@
+.game-screen {
+  width: 90vw;
+  height: 100%;
+  padding: 20px;
+
+  &__statistics {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
