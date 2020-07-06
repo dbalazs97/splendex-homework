@@ -1,0 +1,25 @@
+@import 'src/assets/styles/colors';
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 64px;
+  background: $splendex-background-menu;
+
+  &__logo {
+    height: 48px;
+  }
+
+  &__selector {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+
+    div {
+      font-size: 0.9em;
+      color: $splendex-text-light;
+    }
+  }
+}

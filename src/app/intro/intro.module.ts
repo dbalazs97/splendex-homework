@@ -7,7 +7,7 @@ import { IntroScreenComponent } from './intro-screen/intro-screen.component';
   declarations: [ IntroScreenComponent ],
   imports: [
     CommonModule,
-    RouterModule.forChild([ { path: '', component: IntroScreenComponent } ]),
+    RouterModule.forChild([ { path: '', component: IntroScreenComponent, pathMatch: 'full' } ]),
   ],
 })
 export class IntroModule {
