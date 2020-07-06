@@ -12,6 +12,21 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 30px;
+
+    &__tries__value {
+      font-size: 1.1em;
+    }
+
+    &__best {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &__value {
+        font-size: 2em;
+      }
+    }
   }
 
   &__cards {

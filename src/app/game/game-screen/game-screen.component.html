@@ -1,8 +1,10 @@
 <main class="game-screen">
   <div class="game-screen__statistics">
-    <div class="game-screen__statistics__tries">Current tries: 0</div>
+    <div class="game-screen__statistics__tries">
+      Current tries: <span class="game-screen__statistics__tries__value">{{gameEngineService.tries}}</span>
+    </div>
     <div class="game-screen__statistics__best">
-      Best: <span class="game-screen__statistics__best--label">0</span>
+      Best: <span class="game-screen__statistics__best__value">{{gameEngineService.best}}</span>
     </div>
     <button class="game-screen__statistics__restart">RESTART</button>
   </div>

@@ -9,6 +9,7 @@ import { GameTile } from './game-tile';
 export class GameEngineService {
   private currentGame: GameMap;
   private openFields: Array<number> = [];
+  private bestValue = 0;
 
   constructor(
     private gameGeneratorService: GameGeneratorService,
@@ -27,7 +28,14 @@ export class GameEngineService {
     return this.currentGame?.tries ?? 0;
   }
 
+  public get best(): number {
+    return this.bestValue;
+  }
+
   public newGame(deckSize: number): void {
+    if (this.currentGame?.tries < this.bestValue) {
+      this.bestValue = this.currentGame.tries;
+    }
     this.currentGame = this.gameGeneratorService.generateGame(deckSize);
   }
 
@@ -35,7 +43,6 @@ export class GameEngineService {
     const currentField = this.currentGame.tiles[index];
 
     if (!currentField.revealed && !this.isWon) {
-      this.currentGame.tries++;
 
       if (this.openFields.length === 1 && currentField.value === this.currentGame.tiles[this.openFields[0]].value) {
         this.currentGame.tiles[this.openFields[0]].revealed = true;
@@ -43,12 +50,14 @@ export class GameEngineService {
         currentField.revealed = true;
         currentField.match = true;
         this.openFields = [];
+        this.currentGame.tries++;
         return;
       }
 
       if (this.openFields.length === 2) {
         this.openFields.forEach(field => this.currentGame.tiles[field].revealed = false);
         this.openFields = [];
+        this.currentGame.tries++;
       }
 
       this.openFields.push(index);
