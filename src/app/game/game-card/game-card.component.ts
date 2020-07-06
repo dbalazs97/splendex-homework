@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { GameEngineService } from '../../core/game-engine.service';
 import { GameTile } from '../../core/game-tile';
 
@@ -13,6 +14,7 @@ export class GameCardComponent implements OnInit {
 
   constructor(
     public gameEngineService: GameEngineService,
+    private sanitizer: DomSanitizer,
   ) {
   }
 
@@ -21,5 +23,10 @@ export class GameCardComponent implements OnInit {
 
   public revealCard(index: number): void {
     this.gameEngineService.openField(index);
+  }
+
+  public getCardImagePath(value: number): SafeUrl {
+    const images = [ 'angular', 'd3', 'jenkins', 'postcss', 'react', 'redux', 'sass', 'splendex', 'ts', 'webpack' ];
+    return this.sanitizer.bypassSecurityTrustUrl(`assets/cards/${ images[value] }.png`);
   }
 }

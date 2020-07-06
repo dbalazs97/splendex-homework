@@ -1,6 +1,13 @@
 <div
   (click)="revealCard(index)"
   class="game-card"
+  [class.game-card--mathced]="card.match"
 >
-  {{card.value}} - {{card.revealed}}
+  <img
+    *ngIf="card.revealed"
+    [class.game-card__image--mathced]="card.match"
+    [src]="getCardImagePath(card.value)"
+    alt="Card image"
+    class="game-card__image"
+  >
 </div>
