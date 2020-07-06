@@ -14,7 +14,7 @@ export class GameGeneratorService {
       do {
         position = Math.round(Math.random() * (deckSize - 1));
       } while (!!currentGame.tiles[position]);
-      currentGame.tiles[position] = { value: Math.floor(i / 2), revealed: false };
+      currentGame.tiles[position] = { value: Math.floor(i / 2), revealed: false, match: false };
     }
     return currentGame;
   }

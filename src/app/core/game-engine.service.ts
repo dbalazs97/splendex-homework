@@ -39,7 +39,9 @@ export class GameEngineService {
 
       if (this.openFields.length === 1 && currentField.value === this.currentGame.tiles[this.openFields[0]].value) {
         this.currentGame.tiles[this.openFields[0]].revealed = true;
+        this.currentGame.tiles[this.openFields[0]].match = true;
         currentField.revealed = true;
+        currentField.match = true;
         this.openFields = [];
         return;
       }
