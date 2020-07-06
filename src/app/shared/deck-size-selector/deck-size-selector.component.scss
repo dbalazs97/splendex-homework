@@ -1,4 +1,8 @@
+@import 'src/assets/styles/colors';
+
 .deck-size-selector {
-  padding: 8px;
+  padding: 8px 16px;
   font-size: 1.5em;
+  border-radius: 3px;
+  border: 1px solid $splendex-border;
 }

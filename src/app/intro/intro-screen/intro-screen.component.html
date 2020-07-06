@@ -1,5 +1,15 @@
 <main class="intro-screen">
   <div class="intro-screen__title">Splendex Memory Game</div>
+  <div class="intro-screen__rules">
+    <ul>
+      <li>Present the user with an even number of cards, “face down”.</li>
+      <li> When the user clicks a card, “flip it over” and reveal the hidden image.</li>
+      <li> When two cards are revealed:</li>
+      <li>If the cards are identical, remove them from play.</li>
+      <li>If they are not, flip them back.</li>
+      <li>The game ends when all the cards are removed.</li>
+    </ul>
+  </div>
   <splendex-deck-size-selector [(selectedSize)]="selectedSize"></splendex-deck-size-selector>
   <splendex-new-game-button (clickEvent)="newGame()"></splendex-new-game-button>
 </main>
