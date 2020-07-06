@@ -26,4 +26,8 @@ export class GameScreenComponent implements OnInit, OnDestroy {
   public ngOnDestroy(): void {
     this.routeSubscription?.unsubscribe();
   }
+
+  public restart(): void {
+    this.gameEngineService.restart();
+  }
 }

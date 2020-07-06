@@ -6,7 +6,7 @@
     <div class="game-screen__statistics__best">
       Best: <span class="game-screen__statistics__best__value">{{gameEngineService.best}}</span>
     </div>
-    <button class="game-screen__statistics__restart">RESTART</button>
+    <button (click)="restart()" class="game-screen__statistics__restart">RESTART</button>
   </div>
 
   <div class="game-screen__cards">

@@ -33,8 +33,8 @@ export class GameEngineService {
   }
 
   public newGame(deckSize: number): void {
-    if (this.currentGame?.tries < this.bestValue) {
-      this.bestValue = this.currentGame.tries;
+    if (this.currentGame?.tries < this.bestValue || this.bestValue === 0) {
+      this.bestValue = this.currentGame?.tries ?? 0;
     }
     this.currentGame = this.gameGeneratorService.generateGame(deckSize);
   }
@@ -63,5 +63,14 @@ export class GameEngineService {
       this.openFields.push(index);
       currentField.revealed = true;
     }
+  }
+
+  public restart(): void {
+    this.currentGame.tries = 0;
+    this.currentGame.tiles.forEach(tile => {
+      tile.revealed = false;
+      tile.match = false;
+      this.openFields = [];
+    });
   }
 }
